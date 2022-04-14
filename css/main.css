@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
 
 * {
   box-sizing: border-box;
@@ -10,7 +10,8 @@ html, body {
 }
 
 body {
-  background-image: url(/img/bg2.png);
+  background-image: url(/img/main-bg2.jpg);
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +35,7 @@ a {
 }
 
 header {
-  width: 100%;
+  width: 1200px;
   height: 70px;
   background-color: #1f1f1f;
   padding-top: 15px;
@@ -62,22 +63,34 @@ header {
   height: 40px;
   line-height: 40px;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 14px;
 }
 
 .hidden-menu {
-  width: 600px;
+  width: 510px;
   padding: 10px;
   position: absolute;
+  background-color: #1f1f1f;
 }
 
 .hidden-ul {
   display: flex;
+  padding: 0;
 }
 
-.header-menu li {
-  margin-left: 20px;
+.hidden-ul li{
+  margin: 0;
+  width: 33%;
+}
+
+.hidden-ul > li > a{
+  color: #c8c8c8;
+  font-weight: 400;
+}
+
+.header-menu > li{
+  margin-left: 50px;
   text-align: -webkit-match-parent;
 }
 
@@ -85,8 +98,76 @@ header {
   width: 300px;
   height: 40px;
   margin-right: 40px;
-  background-image: url(/img/bg2.png);
+  background-image: url(/img/bg.png);
   text-align: center;
 }
 
+.header > .div-header > button{
+  width: 150px;
+  margin-left: 63px;
+  background-color: #c740d3;
+  border: none;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 2px;
+}
 
+.header-fixed {
+  position: fixed;
+  top: 0;
+}
+
+.wrapper {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.div-quicksearch {
+  margin-top: 25px;
+  display: flex;
+  background-color: #1f1f1f;
+}
+
+#quicksearch {
+  height: 40px;
+}
+
+.div-quicksearch input{
+  width: 1090px;
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 50px;
+  border: none;
+  border-radius: 2px;
+  background-color: #1f1f1f;
+}
+
+.search-button {
+  width: 45px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.text-div {
+  margin-top: 25px;
+}
+
+.text-div h1{
+  font-size: 26px;
+  text-align: center;
+  font-weight: 500;
+  color: #c8c8c8;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+}
+
+.text-div p{
+  line-height: 1.7;
+  word-wrap: break-word;
+  color: #c8c8c8;
+}
