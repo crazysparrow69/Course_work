@@ -10,4 +10,4 @@ const fixHeader = () => {
   }
 };
 
-window.onscroll = fixHeader;
+window.onscroll = fixHeader;///
