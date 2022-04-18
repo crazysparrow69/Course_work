@@ -1,41 +1,7 @@
-const films = [
-  {name: "Джокер",
-   img: "/img/bg.png",
-   year: "2020"},
+const div = document.getElementById("hidden-menu");
 
-  {name: "Clown",
-   img: "/img/main-bg.jpg",
-   year: "2022"},
-
-  {name: "Batman",
-   img: "/img/main-bg2.jpg",
-   year: "2021"}
-];
-
-const createFilmDiv = () => {
-  const div = document.getElementById("div1");
-
-  for (let i = 0; i < films.length; i++) {
-    const filmDiv = document.createElement("div");
-    const img = document.createElement("img");
-    const button = document.createElement("button");
-    const title = document.createElement("p");
-    const year = document.createElement("p");
-
-    filmDiv.classList.add("film-div");
-    year.id = "p-year";
-
-    img.src = films[i].img;
-    button.innerHTML = "В избранное!★";
-    title.innerHTML = films[i].name;
-    year.innerHTML = films[i].year;
-
-    div.appendChild(filmDiv);
-    filmDiv.appendChild(img);
-    filmDiv.appendChild(button);
-    filmDiv.appendChild(title);
-    filmDiv.appendChild(year);
-  }
+const func = () => {
+  div.style.visibility = "visible";
 };
 
-createFilmDiv();
+div.addEventListener("mouseover", func);

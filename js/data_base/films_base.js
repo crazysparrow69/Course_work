@@ -1,4 +1,6 @@
-const films = [
+"use strict"
+
+export const films = [
     {
         name :'Трон: Спадок',
         genre:'Ігри',

@@ -65,13 +65,24 @@ header {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 14px;
+  transition: all .3s;
 }
 
-.hidden-menu {
+.header-menu > li > a:hover {
+  color: #c740d3;
+}
+
+.div-header ul li div {
   width: 510px;
   padding: 10px;
   position: absolute;
   background-color: #1f1f1f;
+  opacity: 0;
+  transition: all .3s;
+}
+
+.div-header ul li:hover div {
+  opacity: 1;
 }
 
 .hidden-ul {
@@ -82,11 +93,18 @@ header {
 .hidden-ul li{
   margin: 0;
   width: 33%;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: all .3s;
 }
 
 .hidden-ul > li > a{
   color: #c8c8c8;
   font-weight: 400;
+}
+
+.hidden-ul > li:hover {
+  background-color: #c740d3;
 }
 
 .header-menu > li{
@@ -112,6 +130,13 @@ header {
   font-weight: 600;
   font-size: 12px;
   border-radius: 2px;
+  box-shadow: 0 10px 30px rgb(191 61 203 / 34%);
+  transition: all .3s;
+}
+
+.div-header button:hover {
+  background-color: #5d0960;
+  box-shadow: none;
 }
 
 .header-fixed {
@@ -170,4 +195,60 @@ header {
   line-height: 1.7;
   word-wrap: break-word;
   color: #c8c8c8;
+}
+
+.section-div p{
+  font-size: 18px;
+  color: #c740d3;
+}
+
+#films-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 1000px;
+  background-color: transparent;
+}
+
+.film-div {
+  width: 16.66%;
+  height: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.film-div img{
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.film-div button{
+  height: 20px;
+  background-color: #1f1f1f;
+  border: none;
+  color: #c8c8c8;
+  transition: all .3s;
+}
+
+.film-div button:hover {
+  background-color: #c740d3;
+  color: white;
+}
+
+.film-div p{
+  margin-top: 5px;
+  margin-bottom: 0px;
+  color: #c8c8c8;
+  width: 100%;
+}
+
+#p-year {
+  color: #999;
 }
