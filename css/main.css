@@ -169,6 +169,8 @@ header {
   border: none;
   border-radius: 2px;
   background-color: #1f1f1f;
+  color: white;
+  outline: none;
 }
 
 .search-button {
@@ -227,7 +229,7 @@ header {
 
 .film-div img{
   width: 100%;
-  height: auto;
+  height: 240px;
   margin-bottom: 5px;
 }
 
