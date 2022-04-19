@@ -2,10 +2,11 @@
 
 import {films} from "./data_base/films_base.js";
 
-const createFilmDiv = () => {
-  const div = document.getElementById("films-div");
+export const createFilmDiv = (divClass, array) => {
+  const div = document.getElementById(divClass);
+  console.log(array)
 
-  for (let i = 0; i < films.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     const filmDiv = document.createElement("div");
     const img = document.createElement("img");
     const button = document.createElement("button");
@@ -15,10 +16,10 @@ const createFilmDiv = () => {
     filmDiv.classList.add("film-div");
     year.id = "p-year";
 
-    img.src = films[i].img;
+    img.src = array[i].img;
     button.innerHTML = "В избранное!★";
-    title.innerHTML = films[i].name;
-    year.innerHTML = films[i].year;
+    title.innerHTML = array[i].name;
+    year.innerHTML = array[i].year;
 
     div.appendChild(filmDiv);
     filmDiv.appendChild(img);
@@ -28,4 +29,4 @@ const createFilmDiv = () => {
   }
 };
 
-createFilmDiv();
+createFilmDiv("films-div", films);
