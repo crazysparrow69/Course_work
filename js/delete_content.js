@@ -6,4 +6,4 @@ export const deleteContent = (divClass) => {
   while (div.firstChild) {
     div.removeChild(div.firstChild);
   }
-}
+};

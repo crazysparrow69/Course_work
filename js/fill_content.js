@@ -4,7 +4,6 @@ import {films} from "./data_base/films_base.js";
 
 export const createFilmDiv = (divClass, array) => {
   const div = document.getElementById(divClass);
-  console.log(array)
 
   for (let i = 0; i < array.length; i++) {
     const filmDiv = document.createElement("div");
