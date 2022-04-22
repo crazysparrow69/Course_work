@@ -109,4 +109,4 @@ export const films = [
         img:'/img/films/Dune.jpg',
         year:'2021',
     },
-]
+];
