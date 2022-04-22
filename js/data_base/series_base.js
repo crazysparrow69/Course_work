@@ -1,6 +1,6 @@
 'use strict';
 
-const series = [
+export const series = [
     {
         name :'Чернобыль',
         genre:'История',
@@ -109,5 +109,4 @@ const series = [
         img:'/img/series/manifest.jpeg',
         year:'2018',
     },
-   
-]
+];
