@@ -1,6 +1,7 @@
 "use strict"
 
-import {films} from "./data_base/films_base.js";
+import { films } from "./data_base/films_base.js";
+import { series } from "./data_base/series_base.js";
 
 export const createFilmDiv = (divClass, array) => {
   const div = document.getElementById(divClass);
@@ -29,3 +30,4 @@ export const createFilmDiv = (divClass, array) => {
 };
 
 createFilmDiv("films-div", films);
+createFilmDiv("series-div", series);
