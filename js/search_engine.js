@@ -30,8 +30,6 @@ const searchForCoincidences = (data) => {
     if (data.toLowerCase() === films[i].name.substr(0, data.length).toLowerCase()) {
       coincidences.push(films[i]);
     }
-  }
-  for (let i = 0; i < series.length; i++) {
     if (data.toLowerCase() === series[i].name.substr(0, data.length).toLowerCase()) {
       coincidences.push(series[i]);
     }
