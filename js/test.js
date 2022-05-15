@@ -5,3 +5,9 @@ const func = () => {
 };
 
 div.addEventListener("mouseover", func);
+
+function shit() {
+  console.log("shit");
+}
+
+document.getElementById("serial").addEventListener("click", shit);
