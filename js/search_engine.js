@@ -9,28 +9,27 @@ import { deleteContent } from "./delete_content.js";
 // Get link of the input
 const input = document.getElementById("input");
 
+// Const for magic numbers
+const DELAY_TIME = 100;
+const ENTER_KEYCODE = 13;
+
 // Make artificial delay
-const delay = ms => {
-  return new Promise(r => setTimeout(() => r(), ms));
-};
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Check data for empty string
 const checkForEmptyString = (data) => {
-  if (data.trim() === "") {
-    return false;
-  } else {
-    return true;
-  }
+  if (data.trim() === "") return false;
+  return true;
 };
 
 // Look for coincidences in films and series "data bases"
 const searchForCoincidences = (data) => {
   const coincidences = [];
   for (let i = 0; i < films.length; i++) {
-    if (data.toLowerCase() === films[i].name.substr(0, data.length).toLowerCase()) {
+    if (films[i].name.toLowerCase().startsWith(data.toLowerCase())) {
       coincidences.push(films[i]);
     }
-    if (data.toLowerCase() === series[i].name.substr(0, data.length).toLowerCase()) {
+    if (series[i].name.toLowerCase().startsWith(data.toLowerCase())) {
       coincidences.push(series[i]);
     }
   }
@@ -41,7 +40,7 @@ const searchForCoincidences = (data) => {
 async function showCoincidences() {
   let data = null;
 
-  await delay(100).then(() => {
+  await delay(DELAY_TIME).then(() => {
     data = document.getElementById("input").value;
   });
 
@@ -56,7 +55,7 @@ async function showCoincidences() {
 
 // Prevent opening new window when pressing Enter
 const preventDefaultWrap = (event) => {
-  if (event.which == 13 || event.KeyCode == 13) {
+  if (event.which === ENTER_KEYCODE || event.KeyCode === ENTER_KEYCODE) {
     event.preventDefault();
   }
   showCoincidences();
