@@ -63,3 +63,6 @@ const preventDefaultWrap = (event) => {
 
 // Add event listener to input
 input.addEventListener("keydown", preventDefaultWrap);
+
+// Reload the page when pressing logo
+document.getElementById("logo").addEventListener("click", () => window.location.reload())
