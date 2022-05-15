@@ -115,7 +115,7 @@ header {
   text-align: -webkit-match-parent;
 }
 
-.logo {
+#logo {
   width: 300px;
   height: 40px;
   margin-left: 22px;
