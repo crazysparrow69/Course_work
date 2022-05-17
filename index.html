@@ -160,17 +160,42 @@
               <input type="text" name="register-repassword" id="register-repassword" placeholder="Ваш пароль">
             </div>
           </div>
-  
+          
+          <div id="help">
+            <p id="hint">Подсказка</p>
+            <div id="help-text">
+              <ul>
+                <li>Имя
+                  <ul>
+                    <li>может состоять из 2-20 символов;</li>
+                    <li>не может содержать пробел, символы "@", "#" и т.д., кроме "_";</li>
+                  </ul>
+                </li>
+                <li>Пароль
+                  <ul>
+                    <li>должен состоять из 8-50 символов;</li>
+                    <li>должен включать минимум одну цифру, одну строчную и одну заглавную букву;</li>
+                    <li>не может содержать пробел, символы "@", "#" и т.д., кроме "_";</li> 
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
           <button id="register-button">РЕГИСТРАЦИЯ</button>
           <p id="close-register">Закрыть</p>
         </div>
       </form>
     </div>
 
+    <div id="popup">
+      <p id="popup-text"></p>
+    </div>
+
     <script src="/js/fixed_header.js"></script>
     <script type="module" src="/js/fill_content.js"></script>
     <script type="module" src="/js/search_engine.js"></script>
     <script type="module" src="/js/genres.js"></script>
-    <script src="/js/forms.js"></script>
+    <script type="module" src="/js/forms.js"></script>
 </body>
 </html>
