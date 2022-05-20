@@ -139,6 +139,15 @@ header {
   transition: all .3s;
 }
 
+.header > .div-header > p{
+  height: 40px;
+  margin: 0 0 0 40px;
+  padding-top: 10px;
+  color: #c740d3;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .div-header button:hover {
   background-color: #5d0960;
   box-shadow: none;
