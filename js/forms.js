@@ -5,23 +5,15 @@ import { users } from "./data_base/users.js";
 
 // Get links
 const signInButton = document.getElementById("button-sign-in");
-const loginForm = document.getElementById("login-form");
-const login = document.getElementById("login");
-const loginButton = document.getElementById("login-button");
-const loginName = document.getElementById("login-name");
-const loginPassword = document.getElementById("login-password");
-const closeLogin = document.getElementById("close-login");
 const registrationForm = document.getElementById("registration-form");
 const register = document.getElementById("register");
-const registerButton = document.getElementById("register-button");
-const registerName = document.getElementById("register-name");
-const registerPassword = document.getElementById("register-password");
-const registerRepass = document.getElementById("register-repassword");
 const closeRegister = document.getElementById("close-register");
 const cover = document.getElementById("cover");
 const help = document.getElementById("help");
 const hint = document.getElementById("hint");
 const helpText = document.getElementById("help-text");
+const loginForm = document.getElementById("login-form");
+const login = document.getElementById("login");
 
 // Show/hide elements
 const showCover = () => cover.style.display = "block";
@@ -62,6 +54,48 @@ const endProcess = () => {
   if (registrationForm.style.display = "block") hideRegistrationForm();
 };
 
+// Instruments //////////////////////////////////////////////
+const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "=", "<", ">", ",", ".", "/", "?", "|", "~", "`", " "];
+
+const findUserInDB = (name) => { 
+  for(const user of users) if(name === user.name) return user; 
+  else return false;
+};
+
+const checkNumOfSymbols = (str, min, max) => {
+  if (str.length < min || str.length > max) return false;
+  return true;
+};
+
+const checkForInvalidSymbols = (str) => {
+  for (const symbol of symbols) {
+    if (str.split(symbol).length > 1) return false;
+  }
+  return true;
+};
+
+// Local storage //////////////////////////////////////////
+const saveToLocalStorage = (obj) => localStorage.setItem(obj.name, JSON.stringify(obj));
+
+const removeFromLocalStorage = (name) => {
+  if (typeof(name) != "string") name.toString();
+  localStorage.removeItem(name);
+};
+
+const changeUserStatusInLS = (name, status) => {
+  const user = JSON.parse(localStorage.getItem(name));
+  user.status = status;
+  removeFromLocalStorage(name);
+  saveToLocalStorage(user);
+};
+
+// Registration ///////////////////////////////////////////
+///////////////////////////////////////////////////////////
+
+const registerButton = document.getElementById("register-button");
+const registerName = document.getElementById("register-name");
+const registerPassword = document.getElementById("register-password");
+const registerRepass = document.getElementById("register-repassword");
 
 // Create new user ////////////////////////////////////////
 class User {
@@ -84,27 +118,9 @@ const newUser = (type, name, password, status) => {
   );
 };
 
-
-// Instruments for registration ////////////////////////////
-const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "=", "<", ">", ",", ".", "/", "?", "|", "~", "`", " "];
-
-const checkNumOfSymbols = (str, min, max) => {
-  if (str.length < min || str.length > max) return false;
-  return true;
-};
-
-const checkForInvalidSymbols = (str) => {
-  for (const symbol of symbols) {
-    if (str.split(symbol).length > 1) return false;
-  }
-  return true;
-};
-
 // Check name for validity //////////////////////////////////
 const checkNameForExistance = (name) => {
-  for (const user of users) {
-    if (name === user.name) return false;
-  }
+  if (!findUserInDB(name)) return false;
   return true
 };
 
@@ -177,10 +193,50 @@ const registration = (event) => {
     console.log("wrong password");
     return;
   }
+  
   newUser("user", name, password, "registered");
+  saveToLocalStorage(findUserInDB(name));
   popup("Вы успешно зарегистрированы!");
   console.log(users);
 };
+
+registerButton.addEventListener("click", registration);
+
+// Sign-in ///////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+const loginButton = document.getElementById("login-button");
+const loginName = document.getElementById("login-name");
+const loginPassword = document.getElementById("login-password");
+const closeLogin = document.getElementById("close-login");
+
+const checkUserPassword = (password, userPassword) => { 
+   if (password === userPassword) return true;
+   return false;
+};
+
+const signIn = (event) => {
+  event.preventDefault();
+
+  const name = loginName.value;
+  const password = loginPassword.value;
+  const user = findUserInDB(name);
+
+  if (!user) {
+    popup("Неверное имя!");
+    return;
+  } else if (!checkUserPassword(password, user.password)) {
+    popup("Неверный пароль!");
+    return;
+  }
+  
+  user.status = "logged-in";
+  changeUserStatusInLS(user.name, "logged-in");
+  popup("Вы вошли в аккаунт");
+  console.log(users); 
+};
+
+loginButton.addEventListener("click", signIn);
 
 // Modal window ////////////////////////////////////////////////
 const modalWindow = document.getElementById("popup");
@@ -215,4 +271,3 @@ register.addEventListener("click", startRegistration);
 login.addEventListener("click", startLogin);
 closeLogin.addEventListener("click", endProcess);
 closeRegister.addEventListener("click", endProcess);
-registerButton.addEventListener("click", registration);
