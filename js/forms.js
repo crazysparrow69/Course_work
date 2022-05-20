@@ -82,9 +82,9 @@ const removeFromLocalStorage = (name) => {
   localStorage.removeItem(name);
 };
 
-const changeUserStatusInLS = (name, status) => {
+const changeUserPropertyInLS = (name, property, newValue) => {
   const user = JSON.parse(localStorage.getItem(name));
-  user.status = status;
+  user[property] = newValue;
   removeFromLocalStorage(name);
   saveToLocalStorage(user);
 };
@@ -231,12 +231,16 @@ const signIn = (event) => {
   }
   
   user.status = "logged-in";
-  changeUserStatusInLS(user.name, "logged-in");
+  changeUserPropertyInLS(user.name, "status", "logged-in");
+  signInButton.innerHTML = user.name;
   popup("Вы вошли в аккаунт");
   console.log(users); 
 };
 
 loginButton.addEventListener("click", signIn);
+
+// Sign-out ////////////////////////////////////////////////////
+
 
 // Modal window ////////////////////////////////////////////////
 const modalWindow = document.getElementById("popup");
