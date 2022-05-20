@@ -59,7 +59,7 @@ const symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "="
 
 const findUserInDB = (name) => { 
   for(const user of users) if(name === user.name) return user; 
-  else return false;
+  return false;
 };
 
 const checkNumOfSymbols = (str, min, max) => {
@@ -120,7 +120,7 @@ const newUser = (type, name, password, status) => {
 
 // Check name for validity //////////////////////////////////
 const checkNameForExistance = (name) => {
-  if (!findUserInDB(name)) return false;
+  if (findUserInDB(name)) return false;
   return true
 };
 
@@ -166,7 +166,7 @@ const checkPassword = (password, repassword) => {
     popup("Wrong number of symbols in password")
     return false;
   } else if (!checkPassForLetters(password)) {
-    popup("Name must include at least 1 numeral, 1 lowercase and 1 uppercase letters");
+    popup("Password must include at least 1 numeral, 1 lowercase and 1 uppercase letters");
     return false;
   } else if (!checkForInvalidSymbols(password)) {
     popup("Invalid symbols in password")
