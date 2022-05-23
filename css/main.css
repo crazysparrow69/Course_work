@@ -70,8 +70,24 @@ header {
   transition: all .3s;
 }
 
+.header-menu > li > p{
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all .3s;
+  margin: 0;
+}
+
 .header-menu > li > a:hover {
   color: #c740d3;
+}
+
+.header-menu > li > p:hover {
+  color: #c740d3;
+  cursor: pointer;
 }
 
 .div-header ul li div {
