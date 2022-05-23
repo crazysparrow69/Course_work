@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 // Import code from other files
 import { films } from "./data_base/films_base.js";
@@ -44,14 +44,14 @@ async function showCoincidences() {
     data = document.getElementById("input").value;
   });
 
-  if (!checkForEmptyString(data))  {
+  if (!checkForEmptyString(data)) {
     deleteContent("search-div");
     return;
   }
-  
+
   deleteContent("search-div");
   createFilmDiv("search-div", searchForCoincidences(data));
-};
+}
 
 // Prevent opening new window when pressing Enter
 const preventDefaultWrap = (event) => {
@@ -65,4 +65,6 @@ const preventDefaultWrap = (event) => {
 input.addEventListener("keydown", preventDefaultWrap);
 
 // Reload the page when pressing logo
-document.getElementById("logo").addEventListener("click", () => window.location.reload())
+document
+  .getElementById("logo")
+  .addEventListener("click", () => window.location.reload());
