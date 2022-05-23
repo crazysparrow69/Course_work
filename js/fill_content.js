@@ -1,8 +1,5 @@
 "use strict"
 
-import { films } from "./data_base/films_base.js";
-import { series } from "./data_base/series_base.js";
-
 // Fill "divClass" container with "array" elements
 export const createFilmDiv = (divClass, array) => {
   const div = document.getElementById(divClass);
@@ -29,6 +26,3 @@ export const createFilmDiv = (divClass, array) => {
     filmDiv.appendChild(year);
   }
 };
-
-createFilmDiv("films-div", films);
-createFilmDiv("series-div", series);
