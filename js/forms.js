@@ -342,7 +342,7 @@ const signIn = (event) => {
   createProfileName(name);
 
   user.status = "logged-in";
-  changeUserPropertyInLS(user.name, "status", "logged-in");
+  changeUserPropertyInLS(name, "status", "logged-in");
   window.location.reload();
   console.log(users);
 };
