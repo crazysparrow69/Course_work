@@ -2,6 +2,8 @@
 
 // Import
 import { users } from "./data_base/users.js";
+import { popup } from "./modal_window.js";
+import { newUser } from "./data_base/users.js";
 
 // Get links ///////////////////////////////////////////////////
 const registrationForm = document.getElementById("registration-form");
@@ -48,31 +50,6 @@ const endProcess = () => {
   if ((loginForm.style.display = "block")) hideLoginForm();
   if ((registrationForm.style.display = "block")) hideRegistrationForm();
 };
-
-// Modal window ///////////////////////////////////////////////////////
-const modalWindow = document.getElementById("popup");
-const popupText = document.getElementById("popup-text");
-const DELAY_TIME1 = 2000;
-const DELAY_TIME2 = 500;
-
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-function showPopup(str) {
-  popupText.innerHTML = str;
-  modalWindow.style.animationName = "popup";
-  modalWindow.style.display = "block";
-}
-
-async function hidePopup() {
-  modalWindow.style.animationName = "popdown";
-  await delay(DELAY_TIME2);
-  modalWindow.style.display = "none";
-}
-
-async function popup(str) {
-  showPopup(str);
-  await delay(DELAY_TIME1).then(hidePopup);
-}
 
 // Create button for signing-in or text with logged-in user ///////////
 const div = document.querySelector(".div-header");
@@ -199,27 +176,6 @@ const registerButton = document.getElementById("register-button");
 const registerName = document.getElementById("register-name");
 const registerPassword = document.getElementById("register-password");
 const registerRepass = document.getElementById("register-repassword");
-
-// Create new user /////////////////////////////////////////////////
-class User {
-  constructor(options) {
-    this.type = options.type;
-    this.name = options.name;
-    this.password = options.password;
-    this.status = options.status;
-  }
-}
-
-const newUser = (type, name, password, status) => {
-  users.push(
-    new User({
-      type: type,
-      name: name,
-      password: password,
-      status: status,
-    })
-  );
-};
 
 // Check name for validity /////////////////////////////////////////
 const checkNameForExistance = (name) => {
