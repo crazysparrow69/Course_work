@@ -10,7 +10,7 @@ import { createFilmDiv } from "./js/fill_content.js";
 const buttonProfile = document.getElementById("button-profile");
 
 const openProfile = () => {
-  if (page.status === "logged") return window.location.href = "/html/test.html";
+  if (page.status === "logged") return window.location.href = "/html/profile.html";
   popup("Вы не вошли в аккаунт");
 };
 

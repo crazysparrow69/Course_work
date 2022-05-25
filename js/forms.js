@@ -89,7 +89,6 @@ const checkForLoggedIn = () => {
     if (user.status === "logged-in") {
       deleteButton();
       createProfileName(user.name);
-      popup("Вы вошли в аккаунт");
     }
   }
 };
@@ -163,7 +162,7 @@ const removeFromLocalStorage = (name) => {
   localStorage.removeItem(name);
 };
 
-const changeUserPropertyInLS = (name, property, newValue) => {
+export const changeUserPropertyInLS = (name, property, newValue) => {
   const user = JSON.parse(localStorage.getItem(name));
   user[property] = newValue;
   removeFromLocalStorage(name);
@@ -239,7 +238,6 @@ const checkPassword = (password, repassword) => {
   return true;
 };
 
-// Registration process /////////////////////////////////////////////
 const registration = (event) => {
   event.preventDefault();
 
@@ -320,5 +318,5 @@ function signOut(event) {
   signedInUser.status = "registered";
   changeUserPropertyInLS(signedInUser.name, "status", "registered");
 
-  window.location.reload();
+  window.location.href = "/index.html";
 }
