@@ -1,0 +1,72 @@
+
+.main-data {
+  margin-top: 25px;
+  display: flex;
+}
+
+.left-container {
+  width: fit-content;
+}
+
+.left-container img{
+  width: 300px;
+  height: 300px;
+}
+
+.left-container p{
+  width: fit-content;
+  color: #999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.left-container p:hover {
+  color: white;
+}
+
+.left-container .change-avatar #avatars {
+  display: none;
+  padding: 5px;
+  background-color: #1f1f1f;
+  box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+  position: absolute;
+}
+
+.left-container .change-avatar #avatars img{
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.right-container {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.right-container .user-data {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-container .user-data #nickname {
+  text-decoration: underline;
+}
+
+.right-container .recent p{
+  color: white;
+}
+
+.right-container .recent #recent-films {
+  display: flex;
+  justify-content: center;
+}
+
+.user-films-data .chosens p{
+  color: white;
+}
+
+.user-films-data .chosens #chosen-films {
+  display: flex;
+}
+
