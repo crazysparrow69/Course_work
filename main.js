@@ -11,7 +11,7 @@ const buttonProfile = document.getElementById("button-profile");
 
 const openProfile = () => {
   if (page.status === "logged") return window.location.href = "/html/test.html";
-  popup("Вы не вошли в аккаунт")
+  popup("Вы не вошли в аккаунт");
 };
 
 buttonProfile.addEventListener("click", openProfile);
