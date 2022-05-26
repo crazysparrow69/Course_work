@@ -6,7 +6,10 @@ const findUsersInLS = () => {
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const obj = JSON.parse(localStorage.getItem(key));
-    if (obj.type === "user") users.push(obj);
+    if (obj.type === "user") {
+      if (typeof(obj.chosens) !== "object") obj.chosens = JSON.parse(obj.chosens);
+      users.push(obj);
+    }
   }
 };
 
@@ -18,8 +21,8 @@ class User {
     this.status = options.status;
     this.date = options.date;
     this.avatar = null;
-    this.films = null;
-    this.chosens = null;
+    this.films = [];
+    this.chosens = [];
   }
 }
 

@@ -13,6 +13,7 @@ export const createFilmDiv = (divClass, array) => {
 
     filmDiv.classList.add("film-div");
     year.id = "p-year";
+    button.id = array[i].id;
 
     img.src = array[i].img;
     button.innerHTML = "В избранное!★";
