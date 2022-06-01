@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/css/forms.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="main-div">
+    <header class="header">
+      <div class="div-header">
+        <a id="logo" href="/index.html"></a>
+        <ul class="header-menu">
+          <li>
+            <a id="genres" href="/index.html">ЖАНРЫ</a>
+            <div id="hidden-menu">
+              <ul class="hidden-ul">
+                <li><a href="#" id="detective">Детектив</li>
+                <li><a href="#" id="drama">Драма</a></li>
+                <li><a href="#" id="history">История</a></li>
+              </ul>
+              <ul class="hidden-ul">
+                <li><a href="#" id="comedy">Комедия</a></li>
+                <li><a href="#" id="adventures">Приключения</a></li>
+                <li><a href="#" id="games">Игры</a></li>
+              </ul>
+            </div> 
+          </li>
+          <li><a href="/html/serials.html">СЕРИАЛЫ</a></li>
+          <li><a href="#">ФИЛЬМЫ</a></li>
+          <li><a href="#">РАНДОМ</a></li>
+          <li><p id="button-profile">ПРОФИЛЬ</p></li>
+        </ul>
+      </div>
+    </header>
+    
+    <div class="wrapper">
+
+    </div>
+
+    <div class="copyright">
+      <p>Copyright © 2022 KPI FICT 121 Spec 1 course IM-13 DreamTeam</p>
+    </div>
+  </div>
+
+  <div id="cover"></div>
+    <div id="login-form">
+      <div class="login-header">
+        <div class="title">
+          <p class="login">Войти </p>
+          <p id="register">Регистрация</p>
+        </div>
+      </div>
+  
+      <form method="post">
+        <div class="login-content">
+          <div class="login-row">
+            <div class="login-caption">Логин:</div>
+            <div class="login-input">
+              <input type="text" name="login-name" id="login-name" placeholder="Ваш логин">
+            </div>
+          </div>
+  
+          <div class="login-row">
+            <div class="login-caption">Пароль:</div>
+            <div class="login-input">
+              <input type="text" name="login-password" id="login-password" placeholder="Ваш пароль">
+            </div>
+          </div>
+  
+          <button id="login-button">ВОЙТИ НА САЙТ</button>
+          <p id="close-login">Закрыть</p>
+        </div>
+      </form>
+    </div>
+  
+    <div id="registration-form">
+      <div class="login-header">
+        <div class="title">
+          <p id="login">Войти </p>
+          <p class="register">Регистрация</p>
+        </div>
+      </div>
+  
+      <form method="post">
+        <div class="login-content">
+          <div class="login-row">
+            <div class="login-caption">Логин:</div>
+            <div class="login-input">
+              <input type="text" name="register-name" id="register-name" placeholder="Ваш логин">
+            </div>
+          </div>
+  
+          <div class="login-row">
+            <div class="login-caption">Пароль:</div>
+            <div class="login-input">
+              <input type="text" name="register-password" id="register-password" placeholder="Ваш пароль">
+            </div>
+          </div>
+  
+          <div class="login-row">
+            <div class="login-caption">Подтвердите пароль:</div>
+            <div class="login-input">
+              <input type="text" name="register-repassword" id="register-repassword" placeholder="Ваш пароль">
+            </div>
+          </div>
+          
+          <div id="help">
+            <p id="hint">Подсказка</p>
+            <div id="help-text">
+              <ul>
+                <li>Имя
+                  <ul>
+                    <li>может состоять из 2-20 символов;</li>
+                    <li>не может содержать пробел, символы "@", "#" и т.д., кроме "_";</li>
+                  </ul>
+                </li>
+                <li>Пароль
+                  <ul>
+                    <li>должен состоять из 8-50 символов;</li>
+                    <li>должен включать минимум одну цифру, одну строчную и одну заглавную букву;</li>
+                    <li>не может содержать пробел, символы "@", "#" и т.д., кроме "_";</li> 
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <button id="register-button">РЕГИСТРАЦИЯ</button>
+          <p id="close-register">Закрыть</p>
+        </div>
+      </form>
+    </div>
+
+    <div id="popup">
+      <p id="popup-text"></p>
+    </div>
+
+    <script type="module" src="/js/data_base/users.js"></script>
+    <script type="module" src="/js/forms.js"></script>
+    <script src="/js/fixed_header.js"></script>
+    <script type="module" src="/js/films_actions.js"></script>
+    <script type="module" src="/js/film_page.js"></script>
+</body>
+</html>

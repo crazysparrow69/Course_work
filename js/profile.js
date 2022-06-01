@@ -6,17 +6,20 @@ import { films } from "./data_base/films_base.js";
 import { page } from "./data_base/page.js";
 import { changeUserPropertyInLS } from "./forms.js";
 
-function getFilms() {
+function getFilms(quantity) {
   const arr = [];
-  for (const name of page.user.chosens) {
+
+  for (let i = 0; i < quantity; i++) {
+    const name = page.user.chosens[i];
     for (const film of films) if (name === film.name) arr.push(film);
     for (const serial of series) if (name === serial.name) arr.push(serial);
   }
-  return arr; 
+
+  return arr;
 }
 
-createFilmDiv("recent-films", getFilms());
-createFilmDiv("chosen-films", getFilms());
+createFilmDiv("recent-films", getFilms(4));
+createFilmDiv("chosen-films", getFilms(6));
 
 // Load user's data ///////////////////////////////////
 function loadNickname() {
