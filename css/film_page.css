@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.film-content {
+  display: flex;
+  color: white;
+}
+
+.film-content .avatar-box {
+  margin-right: 25px;
+}
+
+.film-content .avatar-box img{
+  width: 340px;
+  height: 480px;
+}
+
+.film-content .info-box .title-box p{
+  font-size: 30px;
+}
+
+.film-content .avatar-box p{
+  width: fit-content;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.film-content .avatar-box p:hover{
+  color: #999;
+}
