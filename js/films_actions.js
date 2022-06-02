@@ -14,7 +14,7 @@ function addEventListeners() {
   }
 }
 
-function addFilmToUserInLS(name, property, film) {
+export function addFilmToUserInLS(name, property, film) {
   const user = JSON.parse(localStorage.getItem(name));
   let arr = user[property];
 
