@@ -7,6 +7,7 @@ export const series = [
         img:'/img/series/chernobyl.jpeg',
         year:'2019',
         id: 19,
+        country:'Великобритания',
     },
     {
         name :'Рим',
@@ -14,6 +15,7 @@ export const series = [
         img:'/img/series/rome.jpeg',
         year:'2005',
         id: 20,
+        country:'CША',
     },
     {
         name :'Тюдоры',
@@ -21,6 +23,7 @@ export const series = [
         img:'/img/series/tudors.jpeg',
         year:'2007',
         id: 21,
+        country:'Великобритания',
     },
     {
         name :'Флеш',
@@ -28,6 +31,7 @@ export const series = [
         img:'/img/series/the_flash.jpg',
         year:'2014',
         id: 22,
+        country:'CША',
     },
     {
         name :'Ведьмак',
@@ -35,6 +39,8 @@ export const series = [
         img:'/img/series/the_witcher.jpeg',
         year:'2019',
         id: 23,
+        country:'Великобритания',
+
     },
     {
         name :'Любов, смерть и роботы',
@@ -42,6 +48,7 @@ export const series = [
         img:'/img/series/Love_death_work.jpeg',
         year:'2019',
         id: 24,
+        country:'CША',
     },
     {
         name :'По ту сторону жизни',
@@ -49,6 +56,8 @@ export const series = [
         img:'/img/series/On_the_other_side_of_life.jpeg',
         year:'2019',
         id: 25,
+        country:'Канада'
+
     },
     {
         name :'Космические силы',
@@ -56,6 +65,8 @@ export const series = [
         img:'/img/series/Space_force.jpeg',
         year:'2020',
         id: 26,
+        country:'Канада'
+
     },
     {
         name :'Миротворец',
@@ -63,13 +74,16 @@ export const series = [
         img:'/img/series/peacemaker.jpeg',
         year:'2022',
         id: 27,
+        country:'CША',
     },
     {
         name :'Острые козырьки',
         genre:'Драма',
         img:'/img/series/peaky_blinders.jpg',
-        year:'2013',
+        year:'2014',
         id: 28,
+        country:'Великобритания',
+        
     },
     {
         name :'Однажды в сказке',
@@ -77,6 +91,7 @@ export const series = [
         img:'/img/series/once_upon_a_tale .jpeg',
         year:'2011',
         id: 29,
+        country:'CША',
     },
     {
         name :'Викинги',
@@ -84,6 +99,8 @@ export const series = [
         img:'/img/series/vikings.jpeg',
         year:'2020',
         id: 30,
+        country:'Великобритания',
+
     },
     {
         name :'Мистический квест: Пир ворона',
@@ -91,6 +108,7 @@ export const series = [
         img:'/img/series/Feast_of_the_crow.jpg',
         year:'2020',
         id: 31,
+        country:'CША',
     },
     {
         name :'Рекорд',
@@ -98,6 +116,7 @@ export const series = [
         img:'/img/series/high_score.jpg',
         year:'2020',
         id: 32,
+        country:'Япония',
     },
     {
         name :'Аркейн',
@@ -105,6 +124,8 @@ export const series = [
         img:'/img/series/league-_legend.jpg',
         year:'2021',
         id: 33,
+        country:'Китай',
+
     },
     {
         name :'Люцифер',
@@ -112,6 +133,8 @@ export const series = [
         img:'/img/series/lucifer.jpeg',
         year:'2016',
         id: 34,
+        country:'CША'
+
     },
     {
         name :'Сверхъестественное',
@@ -119,6 +142,7 @@ export const series = [
         img:'/img/series/supernatural.jpeg',
         year:'2005',
         id: 35,
+        country:'Канада',
     },
     {
         name :'Манифест',
@@ -126,5 +150,6 @@ export const series = [
         img:'/img/series/manifest.jpeg',
         year:'2018',
         id: 36,
+        country:'Канада',
     },
 ];
