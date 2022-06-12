@@ -1,0 +1,25 @@
+{
+  "name": "course_work",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "lint": "eslint ./js",
+    "lint:fix": "eslint ./js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crazysparrow69/Course_work.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crazysparrow69/Course_work/issues"
+  },
+  "homepage": "https://github.com/crazysparrow69/Course_work#readme",
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb": "^19.0.4"
+  }
+}

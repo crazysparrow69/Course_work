@@ -1,22 +1,20 @@
-"use strict"
-
 // Fill "divClass" container with "array" elements
 export const createFilmDiv = (divClass, array) => {
   const div = document.getElementById(divClass);
 
   for (let i = 0; i < array.length; i++) {
-    const filmDiv = document.createElement("div");
-    const img = document.createElement("img");
-    const button = document.createElement("button");
-    const title = document.createElement("p");
-    const year = document.createElement("p");
+    const filmDiv = document.createElement('div');
+    const img = document.createElement('img');
+    const button = document.createElement('button');
+    const title = document.createElement('p');
+    const year = document.createElement('p');
 
-    filmDiv.classList.add("film-div");
-    year.id = "p-year";
+    filmDiv.classList.add('film-div');
+    year.id = 'p-year';
     button.id = array[i].id;
 
     img.src = array[i].img;
-    button.innerHTML = "В избранное!★";
+    button.innerHTML = 'В избранное!★';
     title.innerHTML = array[i].name;
     year.innerHTML = array[i].year;
 

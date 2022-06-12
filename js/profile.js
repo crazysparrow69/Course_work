@@ -1,10 +1,12 @@
-"use strict"
-
-import { createFilmDiv } from "./fill_content.js";
-import { series } from "./data_base/series_base.js";
-import { films } from "./data_base/films_base.js";
-import { page } from "./data_base/page.js";
-import { changeUserPropertyInLS } from "./forms.js";
+/* eslint-disable no-plusplus */
+/* eslint-disable no-undef */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable import/extensions */
+import { createFilmDiv } from './fill_content.js';
+import { series } from './data_base/series_base.js';
+import { films } from './data_base/films_base.js';
+import { page } from './data_base/page.js';
+import { changeUserPropertyInLS } from './forms.js';
 
 function getFilms(quantity) {
   const arr = [];
@@ -18,26 +20,26 @@ function getFilms(quantity) {
   return arr;
 }
 
-createFilmDiv("recent-films", getFilms(4));
-createFilmDiv("chosen-films", getFilms(6));
+createFilmDiv('recent-films', getFilms(4));
+createFilmDiv('chosen-films', getFilms(6));
 
 // Load user's data ///////////////////////////////////
 function loadNickname() {
-  const nickname = document.getElementById("nickname");
+  const nickname = document.getElementById('nickname');
   nickname.innerHTML = page.user.name;
 }
 
 function loadRegistrationDate() {
-  const registrationDate = document.getElementById("registration-date");
-  registrationDate.innerHTML = "Зарегистрирован " + page.user.date;
+  const registrationDate = document.getElementById('registration-date');
+  registrationDate.innerHTML = `Зарегистрирован ${page.user.date}`;
 }
 
 function loadAvatar() {
-  const avatar = document.getElementById("avatar");
+  const avatar = document.getElementById('avatar');
   avatar.src = page.user.avatar;
 }
 
-function loadData () {
+function loadData() {
   loadNickname();
   loadRegistrationDate();
   loadAvatar();
@@ -46,14 +48,14 @@ function loadData () {
 loadData();
 
 // Avatars ////////////////////////////////////////////
-const avatars = document.getElementById("avatars");
-const changeAvatarButton = document.getElementById("change-avatar");
+const avatars = document.getElementById('avatars');
+const changeAvatarButton = document.getElementById('change-avatar');
 
-const showAvatars = () => avatars.style.display = "block";
-const hideAvatars = () => avatars.style.display = "none";
+const showAvatars = () => { avatars.style.display = 'block'; };
+const hideAvatars = () => { avatars.style.display = 'none'; };
 
 function checkAvatars() {
-  if (avatars.style.display === "block") {
+  if (avatars.style.display === 'block') {
     hideAvatars();
     return;
   }
@@ -61,14 +63,14 @@ function checkAvatars() {
 }
 
 function parseLink(str) {
-  const arr = str.split("/");
-  return "/img/avatars/" + arr[arr.length - 1];
+  const arr = str.split('/');
+  return `/img/avatars/${arr[arr.length - 1]}`;
 }
 
 function changeAvatar(event) {
-  changeUserPropertyInLS(page.user.name, "avatar", parseLink(event.target.src));
+  changeUserPropertyInLS(page.user.name, 'avatar', parseLink(event.target.src));
   window.location.reload();
 }
 
-changeAvatarButton.addEventListener("click", checkAvatars);
-avatars.addEventListener("click", changeAvatar);
+changeAvatarButton.addEventListener('click', checkAvatars);
+avatars.addEventListener('click', changeAvatar);

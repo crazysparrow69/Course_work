@@ -1,13 +1,11 @@
-"use strict";
-
 // Import code from other files
-import { films } from "./data_base/films_base.js";
-import { series } from "./data_base/series_base.js";
-import { createFilmDiv } from "./fill_content.js";
-import { deleteContent } from "./delete_content.js";
+import { films } from './data_base/films_base.js';
+import { series } from './data_base/series_base.js';
+import { createFilmDiv } from './fill_content.js';
+import { deleteContent } from './delete_content.js';
 
 // Get link of the input
-const input = document.getElementById("input");
+const input = document.getElementById('input');
 
 // Const for magic numbers
 const DELAY_TIME = 100;
@@ -18,7 +16,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Check data for empty string
 const checkForEmptyString = (data) => {
-  if (data.trim() === "") return false;
+  if (data.trim() === '') return false;
   return true;
 };
 
@@ -41,16 +39,16 @@ async function showCoincidences() {
   let data = null;
 
   await delay(DELAY_TIME).then(() => {
-    data = document.getElementById("input").value;
+    data = document.getElementById('input').value;
   });
 
   if (!checkForEmptyString(data)) {
-    deleteContent("search-div");
+    deleteContent('search-div');
     return;
   }
 
-  deleteContent("search-div");
-  createFilmDiv("search-div", searchForCoincidences(data));
+  deleteContent('search-div');
+  createFilmDiv('search-div', searchForCoincidences(data));
 }
 
 // Prevent opening new window when pressing Enter
@@ -62,9 +60,9 @@ const preventDefaultWrap = (event) => {
 };
 
 // Add event listener to input
-input.addEventListener("keydown", preventDefaultWrap);
+input.addEventListener('keydown', preventDefaultWrap);
 
 // Reload the page when pressing logo
 document
-  .getElementById("logo")
-  .addEventListener("click", () => window.location.reload());
+  .getElementById('logo')
+  .addEventListener('click', () => window.location.reload());
