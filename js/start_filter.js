@@ -1,5 +1,6 @@
 import { genres, years, countries, categories } from "./data_base/genreBase.js";
 import { select, unSelect , cellSelect} from "./sellectCells.js";
+import { filterSeries, defaultSeries} from "./series-filter.js";
 const mainFilter = document.querySelector('.filter');
 
 let categories_arr = [];
@@ -7,6 +8,7 @@ let categories_arr = [];
 const filt_years = document.createElement('div');
 const filt_genres = document.createElement('div');
 const filt_countries = document.createElement('div');
+let searchButtom;
 let filled_content_years = false;
 let filled_content_genres = false;
 let filled_content_countries = false;
@@ -28,10 +30,12 @@ function createCategories() {
   for (let i = 0; i < categories_arr.length; i++) {
     mainFilter.appendChild(categories_arr[i]);
   }
-  const closeButtom = document.createElement('div');
-  closeButtom.classList.add('close-buttom');
-  mainFilter.appendChild(closeButtom);
-  closeButtom.textContent = 'Поиск'
+  searchButtom = document.createElement('div');
+  searchButtom.classList.add('close-buttom');
+  mainFilter.appendChild(searchButtom);
+  searchButtom.textContent = 'Поиск';
+  searchButtom.addEventListener('click', filterSeries);
+  searchButtom.addEventListener('dblclick', defaultSeries);
 };
 
 function deleteSubmenu(event) {
@@ -53,20 +57,20 @@ function createSubmenu(event) {
   if (event.currentTarget === filt_years) {
     filt_years.style.height = '410px';
     fillContent(years, filt_years, filled_content_years);
-    cellSelect();
     closeYears.addEventListener('dblclick', deleteSubmenu);
+    closeYears.addEventListener('mouseover', cellSelect);
   };
   if (event.currentTarget === filt_genres) {
     filt_genres.style.height = '380px';
     fillContent(genres, filt_genres, filled_content_genres);
-    cellSelect();
     closeGenres.addEventListener('dblclick', deleteSubmenu);
+    closeGenres.addEventListener('mouseover', cellSelect);
   };
   if (event.currentTarget === filt_countries) {
     filt_countries.style.height = '380px';
     fillContent(countries, filt_countries, filled_content_countries);
-    cellSelect();
     closeCountries.addEventListener('dblclick', deleteSubmenu);
+    closeCountries.addEventListener('mouseover', cellSelect);
   };
 };
 
@@ -98,8 +102,9 @@ function fillContentYear(arr, filtCategory) {
   filerDiv.classList.add('yrs');
   for (let i = 0; i < arr.length; i++) {
     contentFilter[i] = document.createElement('p');
+    contentFilter[i].addEventListener('mouseover', cellSelect);
     contentFilter[i].textContent = arr[i];
-    contentFilter[i].classList.add('p-list');
+    contentFilter[i].classList.add('p-list-years');
     filerDiv.appendChild(contentFilter[i]);
   };
   closeYears = document.createElement('p');
@@ -116,8 +121,9 @@ function fillContentGenres(arr, filtCategory) {
   filerDiv.classList.add('gnr');
   for (let i = 0; i < arr.length; i++) {
     contentFilter[i] = document.createElement('p');
+    contentFilter[i].addEventListener('mouseover', cellSelect);
     contentFilter[i].textContent = arr[i];
-    contentFilter[i].classList.add('p-list');
+    contentFilter[i].classList.add('p-list-genres');
     filerDiv.appendChild(contentFilter[i]);
   };
   closeGenres = document.createElement('p');
@@ -134,8 +140,9 @@ function fillContentCountries(arr, filtCategory) {
   filerDiv.classList.add('cntr');
   for (let i = 0; i < arr.length; i++) {
     contentFilter[i] = document.createElement('p');
+    contentFilter[i].addEventListener('mouseover', cellSelect);
     contentFilter[i].textContent = arr[i];
-    contentFilter[i].classList.add('p-list');
+    contentFilter[i].classList.add('p-list-countries');
     filerDiv.appendChild(contentFilter[i]);
   };
   closeCountries = document.createElement('p');

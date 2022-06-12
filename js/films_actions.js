@@ -53,6 +53,7 @@ function func(event) {
   }
   if (event.srcElement.localName === "img") {
     const link = parseLink(event.target.src);
+    console.log(link);
     for (const film of films) if (film.img === link) {
       localStorage.setItem(film.name, JSON.stringify(film));
     }

@@ -4,6 +4,7 @@
   height: 120px;
 }
 .years{ 
+  cursor:pointer;
   display: inline-block;
   color: white;
   padding-top: 10px;
@@ -24,6 +25,7 @@
 }
 
 .genres{
+  cursor:pointer;
   color: white;
   padding-top: 10px;
   padding-bottom: 30px;
@@ -38,6 +40,7 @@
   margin-right: 115px;
 }
 .countries{
+  cursor:pointer;
   color: white;
   padding-top: 10px;
   padding-bottom: 30px;
@@ -52,6 +55,8 @@
 }
 
 .close-buttom{
+  box-shadow: 0 10px 30px rgb(191 61 203 / 34%);
+  cursor:pointer;
   color: white;
   background: #c740d3;
   padding-top: 10px;
@@ -65,6 +70,14 @@
   margin-top: 80px;
 }
 
+.close-buttom:hover {
+  background-color: #5d0960;
+  box-shadow: none;
+}
+
+
 .p-list{
   cursor:pointer;
 }
+
+
