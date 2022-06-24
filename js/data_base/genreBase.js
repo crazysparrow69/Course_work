@@ -1,5 +1,5 @@
 const filterBase = {
-  сategories: ['Год', 'Жанр', 'Страна'],
+  categories: ['Год', 'Жанр', 'Страна'],
   genres: ['История', 'Приключение', 'Комедия', 'Драма', 'Игры', 'Детектив'],
   years: ['2005', '2007', '2011', '2014', '2016', '2018', '2019', '2020', '2021', '2022'],
   countries: ['CША', 'Канада', 'Великобритания', 'Китай', 'Япония'],
@@ -7,4 +7,5 @@ const filterBase = {
 export const { genres } = filterBase;
 export const { years } = filterBase;
 export const { countries } = filterBase;
-export const categories = filterBase.сategories;
+export const categories = filterBase.categories;
+
