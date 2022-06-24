@@ -67,7 +67,7 @@ export const series = [
     name: 'Острые козырьки',
     genre: 'Драма',
     img: '/img/series/peaky_blinders.jpg',
-    year: '2013',
+    year: '2014',
     id: 28,
   },
   {
