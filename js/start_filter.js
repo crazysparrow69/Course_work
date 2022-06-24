@@ -13,7 +13,9 @@ let searchButtom;
 let filled_content_years = false;
 let filled_content_genres = false;
 let filled_content_countries = false;
-let closeYears; let closeGenres; let closeCountries;
+let closeYears; 
+let closeGenres; 
+let closeCountries;
 
 createCategories();
 for (let i = 0; i < categories_arr.length; i++) {
