@@ -1,3 +1,4 @@
+'use strict';
 import { genres, years, countries, categories } from './data_base/genreBase.js';
 import { select, unSelect, cellSelect } from './sellectCells.js';
 import { filterSeries, defaultSeries } from './series-filter.js';
