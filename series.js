@@ -1,9 +1,9 @@
 "use strict"
 
-import { page } from "./data_base/page.js";
-import { popup } from "./modal_window.js";
-import { series } from "./data_base/series_base.js";
-import { createFilmDiv } from "./fill_content.js";
+import { page } from "./js/data_base/page.js";
+import { popup } from "./js/modal_window.js";
+import { series } from "./js/data_base/series_base.js";
+import { createFilmDiv } from "./js/fill_content.js";
 
 const buttonProfile = document.getElementById("button-profile");
 
