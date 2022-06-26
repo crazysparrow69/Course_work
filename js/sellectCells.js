@@ -1,3 +1,4 @@
+'use strict';
 export const searchBase = {
   years: new Set(),
   genres: new Set(),

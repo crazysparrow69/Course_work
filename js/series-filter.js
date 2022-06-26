@@ -1,3 +1,4 @@
+'use strict';
 import { searchYears, searchGenres, searchCountries } from './sellectCells.js';
 import { series } from './data_base/series_base.js';
 import { createFilmDiv } from './fill_content.js';

@@ -1,6 +1,5 @@
-import {
-  genres, years, countries, categories,
-} from './data_base/genreBase.js';
+'use strict';
+import { genres, years, countries, categories } from './data_base/genreBase.js';
 import { select, unSelect, cellSelect } from './sellectCells.js';
 import { filterSeries, defaultSeries } from './series-filter.js';
 
@@ -15,7 +14,9 @@ let searchButtom;
 let filled_content_years = false;
 let filled_content_genres = false;
 let filled_content_countries = false;
-let closeYears; let closeGenres; let closeCountries;
+let closeYears; 
+let closeGenres; 
+let closeCountries;
 
 createCategories();
 for (let i = 0; i < categories_arr.length; i++) {

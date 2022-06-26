@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/series.css">
+  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/css/film_page.css">
   <link rel="stylesheet" href="/css/forms.css">
-  <link rel="stylesheet" href="/css/start_filter.css">
   <title>Document</title>
 </head>
 <body>
@@ -30,27 +30,33 @@
               </ul>
             </div> 
           </li>
-          <li><a href="#" onclick="location.href='serials.html'">CЕРИАЛЫ</a></li>
+          <li><a href="/html/series.html" >CЕРИАЛЫ</a></li>
           <li><a href="#">ФИЛЬМЫ</a></li>
-          <li><a href="#">РАНДОМ</a></li>
+          <li><a href="/html/random.html">РАНДОМ</a></li>
           <li><p id="button-profile">ПРОФИЛЬ</p></li>
         </ul>
       </div>
     </header>
-    
     <div class="wrapper">
-      <div class="div-quicksearch">
-        <form id="quicksearch" method="post">
-          <input id="input" type="text" placeholder="Поиск...">
-        </form>
-      </div>
+      <div class="film-content">
+        <div class="avatar-box">
+          <img id="avatar" src="/img/avatars/3.jpeg" alt="Error">
+          <p id="chosens-button">В избранное!</p>
+        </div>
 
-      <div id="search-div"></div>
-      <div class="filter"></div>
-      <div class="section-div">
-        <p>Сериалы</p>
+        <div class="info-box">
+          <div class="title-box">
+            <p id="title">The title</p>
+          </div>
+
+          <div class="list-box">
+            <ul>
+              <li>Год выхода: <p id="year"></p></li>
+              <li>Жанр: <p id="genre"></p></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div id="series1-div"> </div>
     </div>
 
     <div class="copyright">
@@ -150,14 +156,10 @@
     <div id="popup">
       <p id="popup-text"></p>
     </div>
-    <script type="module" src="/js/sellectCells.js"></script>
-    <script type="module" src="/js/start_filter.js"></script>
-    <script type="module" src="/series.js"></script>
+    <script type="module" src="/js/random.js"></script>
     <script type="module" src="/js/data_base/users.js"></script>
     <script type="module" src="/js/forms.js"></script>
     <script src="/js/fixed_header.js"></script>
-    <script type="module" src="/js/fill_content.js"></script>
-    <script type="module" src="/js/search_engine.js"></script>
-    <script type="module" src="/js/genres.js"></script>
     <script type="module" src="/js/films_actions.js"></script>
+    <script type="module" src="/js/film_page.js"></script>
 </html>
