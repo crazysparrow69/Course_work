@@ -3,7 +3,7 @@ const popupText = document.getElementById('popup-text');
 const DELAY_TIME1 = 2000;
 const DELAY_TIME2 = 500;
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 function showPopup(str) {
   popupText.innerHTML = str;

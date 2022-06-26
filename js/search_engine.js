@@ -12,16 +12,16 @@ const DELAY_TIME = 100;
 const ENTER_KEYCODE = 13;
 
 // Make artificial delay
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 // Check data for empty string
-const checkForEmptyString = (data) => {
+const checkForEmptyString = data => {
   if (data.trim() === '') return false;
   return true;
 };
 
 // Look for coincidences in films and series "data bases"
-const searchForCoincidences = (data) => {
+const searchForCoincidences = data => {
   const coincidences = [];
   for (let i = 0; i < films.length; i++) {
     if (films[i].name.toLowerCase().startsWith(data.toLowerCase())) {
@@ -52,7 +52,7 @@ async function showCoincidences() {
 }
 
 // Prevent opening new window when pressing Enter
-const preventDefaultWrap = (event) => {
+const preventDefaultWrap = event => {
   if (event.which === ENTER_KEYCODE || event.KeyCode === ENTER_KEYCODE) {
     event.preventDefault();
   }

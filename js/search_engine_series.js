@@ -1,18 +1,16 @@
-'use strict';
-import { series } from "./data_base/series_base.js";
-import { createFilmDiv } from "./fill_content.js";
-import { deleteContent } from "./delete_content.js";
-
+import { series } from './data_base/series_base.js';
+import { createFilmDiv } from './fill_content.js';
+import { deleteContent } from './delete_content.js';
 
 const input = document.querySelector('.inputS');
 
 let target;
-let result = new Set();
+const result = new Set();
 input.addEventListener('keyup', checkInput);
 
-function checkInput(event){
-  if(input.value !== 0) {
-    deleteContent("search-div");
+function checkInput(event) {
+  if (input.value !== 0) {
+    deleteContent('search-div');
     searchCoincidence();
   }
 }
@@ -26,6 +24,6 @@ function searchCoincidence() {
         result.add(key);
       }
     }
-    createFilmDiv("search-div",Array.from(result))
+    createFilmDiv('search-div', Array.from(result));
   }
 }

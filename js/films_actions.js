@@ -21,7 +21,7 @@ export function addFilmToUserInLS(name, property, film) {
   const user = JSON.parse(localStorage.getItem(name));
   let arr = user[property];
 
-  if (typeof (user[property]) !== 'object') arr = JSON.parse(user[property]);
+  if (typeof(user[property]) !== 'object') arr = JSON.parse(user[property]);
 
   for (const elem of arr) {
     if (elem === film) {
