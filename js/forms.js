@@ -72,7 +72,7 @@ const deleteButton = () => {
   div.removeChild(button);
 };
 
-const createProfileName = (name) => {
+const createProfileName = name => {
   const p = document.createElement('p');
   p.id = 'button-sign-out';
 
@@ -142,7 +142,7 @@ const symbols = [
   ' ',
 ];
 
-const findUserInDB = (name) => {
+const findUserInDB = name => {
   for (const user of users) if (name === user.name) return user;
   return false;
 };
@@ -152,7 +152,7 @@ const checkNumOfSymbols = (str, min, max) => {
   return true;
 };
 
-const checkForInvalidSymbols = (str) => {
+const checkForInvalidSymbols = str => {
   for (const symbol of symbols) {
     if (str.split(symbol).length > 1) return false;
   }
@@ -160,9 +160,9 @@ const checkForInvalidSymbols = (str) => {
 };
 
 // Local storage ////////////////////////////////////////////////////
-const saveToLocalStorage = (obj) => localStorage.setItem(obj.name, JSON.stringify(obj));
+const saveToLocalStorage = obj => localStorage.setItem(obj.name, JSON.stringify(obj));
 
-const removeFromLocalStorage = (name) => {
+const removeFromLocalStorage = name => {
   if (typeof name !== 'string') name.toString();
   localStorage.removeItem(name);
 };
@@ -182,12 +182,12 @@ const registerPassword = document.getElementById('register-password');
 const registerRepass = document.getElementById('register-repassword');
 
 // Check name for validity /////////////////////////////////////////
-const checkNameForExistance = (name) => {
+const checkNameForExistance = name => {
   if (findUserInDB(name)) return false;
   return true;
 };
 
-const checkName = (name) => {
+const checkName = name => {
   if (!checkNumOfSymbols(name, 2, 20)) {
     popup('Wrong number of symbols in name');
     return false;
@@ -202,7 +202,7 @@ const checkName = (name) => {
 };
 
 // Check password for validity /////////////////////////////////////
-const checkPassForLetters = (password) => {
+const checkPassForLetters = password => {
   let counterU = 0;
   let counterL = 0;
   let counterN = 0;
@@ -243,7 +243,7 @@ const checkPassword = (password, repassword) => {
   return true;
 };
 
-const registration = (event) => {
+const registration = event => {
   event.preventDefault();
 
   const name = registerName.value;
@@ -282,7 +282,7 @@ const checkUserPassword = (password, userPassword) => {
   return false;
 };
 
-const signIn = (event) => {
+const signIn = event => {
   event.preventDefault();
 
   const name = loginName.value;

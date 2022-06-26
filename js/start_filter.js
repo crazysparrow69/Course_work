@@ -1,38 +1,40 @@
-'use strict';
-import { genres, years, countries, categories } from './data_base/genreBase.js';
-import { select, unSelect, cellSelect } from './sellectCells.js';
+
+import {
+  genres, years, countries, categories,
+} from './data_base/genreBase.js';
+import { cellSelect } from './sellectCells.js';
 import { filterSeries, defaultSeries } from './series-filter.js';
 
 const mainFilter = document.querySelector('.filter');
 
-let categories_arr = [];
+let categoriesArr = [];
 
-const filt_years = document.createElement('div');
-const filt_genres = document.createElement('div');
-const filt_countries = document.createElement('div');
+const filtYears = document.createElement('div');
+const filtGenres = document.createElement('div');
+const filtCountries = document.createElement('div');
 let searchButtom;
-let filled_content_years = false;
-let filled_content_genres = false;
-let filled_content_countries = false;
-let closeYears; 
-let closeGenres; 
+let filledContentYears = false;
+let filledContentGenres = false;
+let filledContentCountries = false;
+let closeYears;
+let closeGenres;
 let closeCountries;
 
 createCategories();
-for (let i = 0; i < categories_arr.length; i++) {
-  categories_arr[i].addEventListener('click', createSubmenu);
+for (let i = 0; i < categoriesArr.length; i++) {
+  categoriesArr[i].addEventListener('click', createSubmenu);
 }
 
 function createCategories() {
-  categories_arr = [filt_years, filt_genres, filt_countries];
-  filt_years.classList.add('years');
-  filt_genres.classList.add('genres');
-  filt_countries.classList.add('countries');
-  for (let i = 0; i < categories_arr.length; i++) {
-    categories_arr[i].textContent = categories[i];
+  categoriesArr = [filtYears, filtGenres, filtCountries];
+  filtYears.classList.add('years');
+  filtGenres.classList.add('genres');
+  filtCountries.classList.add('countries');
+  for (let i = 0; i < categoriesArr.length; i++) {
+    categoriesArr[i].textContent = categories[i];
   }
-  for (let i = 0; i < categories_arr.length; i++) {
-    mainFilter.appendChild(categories_arr[i]);
+  for (let i = 0; i < categoriesArr.length; i++) {
+    mainFilter.appendChild(categoriesArr[i]);
   }
   searchButtom = document.createElement('div');
   searchButtom.classList.add('close-buttom');
@@ -44,35 +46,35 @@ function createCategories() {
 
 function deleteSubmenu(event) {
   if (event.currentTarget === closeYears) {
-    filt_years.style.height = '30px';
-    deleteContent(filt_years, filled_content_years);
+    filtYears.style.height = '30px';
+    deleteContent(filtYears, filledContentYears);
   }
   if (event.currentTarget === closeGenres) {
-    filt_genres.style.height = '30px';
-    deleteContent(filt_genres, filled_content_genres);
+    filtGenres.style.height = '30px';
+    deleteContent(filtGenres, filledContentGenres);
   }
   if (event.currentTarget === closeCountries) {
-    filt_countries.style.height = '30px';
-    deleteContent(filt_countries, filled_content_countries);
+    filtCountries.style.height = '30px';
+    deleteContent(filtCountries, filledContentCountries);
   }
 }
 
 function createSubmenu(event) {
-  if (event.currentTarget === filt_years) {
-    filt_years.style.height = '410px';
-    fillContent(years, filt_years, filled_content_years);
+  if (event.currentTarget === filtYears) {
+    filtYears.style.height = '410px';
+    fillContent(years, filtYears, filledContentYears);
     closeYears.addEventListener('dblclick', deleteSubmenu);
     closeYears.addEventListener('mouseover', cellSelect);
   }
-  if (event.currentTarget === filt_genres) {
-    filt_genres.style.height = '380px';
-    fillContent(genres, filt_genres, filled_content_genres);
+  if (event.currentTarget === filtGenres) {
+    filtGenres.style.height = '380px';
+    fillContent(genres, filtGenres, filledContentGenres);
     closeGenres.addEventListener('dblclick', deleteSubmenu);
     closeGenres.addEventListener('mouseover', cellSelect);
   }
-  if (event.currentTarget === filt_countries) {
-    filt_countries.style.height = '380px';
-    fillContent(countries, filt_countries, filled_content_countries);
+  if (event.currentTarget === filtCountries) {
+    filtCountries.style.height = '380px';
+    fillContent(countries, filtCountries, filledContentCountries);
     closeCountries.addEventListener('dblclick', deleteSubmenu);
     closeCountries.addEventListener('mouseover', cellSelect);
   }
@@ -80,22 +82,22 @@ function createSubmenu(event) {
 
 function fillContent(arr, filtCategory, status) {
   if (status) return;
-  if (filtCategory === filt_years) {
+  if (filtCategory === filtYears) {
     fillContentYear(arr, filtCategory, status);
-  } else if (filtCategory === filt_genres) {
+  } else if (filtCategory === filtGenres) {
     fillContentGenres(arr, filtCategory, status);
-  } else if (filtCategory === filt_countries) {
+  } else if (filtCategory === filtCountries) {
     fillContentCountries(arr, filtCategory, status);
   }
 }
 
 function deleteContent(filtCategory, status) {
   if (!status) return;
-  if (filtCategory === filt_years) {
+  if (filtCategory === filtYears) {
     deleteContentYears();
-  } else if (filtCategory === filt_genres) {
+  } else if (filtCategory === filtGenres) {
     deleteContentGenres();
-  } else if (filtCategory === filt_countries) {
+  } else if (filtCategory === filtCountries) {
     deleteContentCountries();
   }
 }
@@ -116,7 +118,7 @@ function fillContentYear(arr, filtCategory) {
   closeYears.textContent = 'закрыть';
   filerDiv.appendChild(closeYears);
   filtCategory.appendChild(filerDiv);
-  filled_content_years = true;
+  filledContentYears = true;
 }
 
 function fillContentGenres(arr, filtCategory) {
@@ -135,7 +137,7 @@ function fillContentGenres(arr, filtCategory) {
   closeGenres.textContent = 'закрыть';
   filerDiv.appendChild(closeGenres);
   filtCategory.appendChild(filerDiv);
-  filled_content_genres = true;
+  filledContentGenres = true;
 }
 
 function fillContentCountries(arr, filtCategory) {
@@ -154,18 +156,18 @@ function fillContentCountries(arr, filtCategory) {
   closeCountries.textContent = 'закрыть';
   filerDiv.appendChild(closeCountries);
   filtCategory.appendChild(filerDiv);
-  filled_content_countries = true;
+  filledContentCountries = true;
 }
 
 function deleteContentYears() {
   document.querySelector('.yrs').remove();
-  filled_content_years = false;
+  filledContentYears = false;
 }
 function deleteContentGenres() {
   document.querySelector('.gnr').remove();
-  filled_content_genres = false;
+  filledContentGenres = false;
 }
 function deleteContentCountries() {
   document.querySelector('.cntr').remove();
-  filled_content_countries = false;
+  filledContentCountries = false;
 }

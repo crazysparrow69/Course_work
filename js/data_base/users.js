@@ -7,7 +7,7 @@ const findUsersInLS = () => {
     const key = localStorage.key(i);
     const obj = JSON.parse(localStorage.getItem(key));
     if (obj.type === 'user') {
-      if (typeof (obj.chosens) !== 'object') obj.chosens = JSON.parse(obj.chosens);
+      if (typeof(obj.chosens) !== 'object') obj.chosens = JSON.parse(obj.chosens);
       users.push(obj);
     }
   }

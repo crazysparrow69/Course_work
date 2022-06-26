@@ -5,7 +5,7 @@ import { createFilmDiv } from './fill_content.js';
 import { deleteContent } from './delete_content.js';
 
 // Filtrating
-const filter = (genre) => {
+const filter = genre => {
   const coincidences = [];
 
   for (const film of films) {
@@ -19,7 +19,7 @@ const filter = (genre) => {
 };
 
 // Show all coincidences
-const showCoincidences = (event) => {
+const showCoincidences = event => {
   const genre = event.target.innerHTML;
 
   deleteContent('search-div');

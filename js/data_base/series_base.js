@@ -53,7 +53,7 @@ export const series = [
     img: '/img/series/On_the_other_side_of_life.jpeg',
     year: '2019',
     id: 25,
-    country: 'Канада'
+    country: 'Канада',
 
   },
   {
@@ -62,7 +62,7 @@ export const series = [
     img: '/img/series/Space_force.jpeg',
     year: '2020',
     id: 26,
-    country: 'Канада'
+    country: 'Канада',
 
   },
   {
@@ -129,22 +129,22 @@ export const series = [
     img: '/img/series/lucifer.jpeg',
     year: '2016',
     id: 34,
-    country: 'CША'
+    country: 'CША',
   },
   {
-    name :'Сверхъестественное',
-    genre:'Детектив',
-    img:'/img/series/supernatural.jpeg',
-    year:'2005',
+    name: 'Сверхъестественное',
+    genre: 'Детектив',
+    img: '/img/series/supernatural.jpeg',
+    year: '2005',
     id: 35,
-    country:'Канада',
+    country: 'Канада',
   },
   {
-    name :'Манифест',
-    genre:'Детектив',
-    img:'/img/series/manifest.jpeg',
-    year:'2018',
+    name: 'Манифест',
+    genre: 'Детектив',
+    img: '/img/series/manifest.jpeg',
+    year: '2018',
     id: 36,
-    country:'Канада',
+    country: 'Канада',
   },
 ];

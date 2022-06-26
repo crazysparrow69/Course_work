@@ -7,5 +7,4 @@ const filterBase = {
 export const { genres } = filterBase;
 export const { years } = filterBase;
 export const { countries } = filterBase;
-export const categories = filterBase.categories;
-
+export const { categories } = filterBase;
