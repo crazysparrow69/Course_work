@@ -1,4 +1,3 @@
-
 import {
   genres, years, countries, categories,
 } from './data_base/genreBase.js';

@@ -1,5 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable no-undef */
 export const users = [];
 
 const findUsersInLS = () => {

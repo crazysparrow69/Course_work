@@ -1,8 +1,3 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-undef */
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable import/extensions */
 import { changeUserPropertyInLS } from './forms.js';
 import { page } from './data_base/page.js';
 import { films } from './data_base/films_base.js';

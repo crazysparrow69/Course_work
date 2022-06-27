@@ -1,7 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable no-undef */
-/* eslint-disable import/prefer-default-export */
-// Fill "divClass" container with "array" elements
 export const createFilmDiv = (divClass, array) => {
   const div = document.getElementById(divClass);
 

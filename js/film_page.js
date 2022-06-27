@@ -1,6 +1,3 @@
-/* eslint-disable import/extensions */
-/* eslint-disable no-plusplus */
-/* eslint-disable no-undef */
 import { page } from './data_base/page.js';
 import { addFilmToUserInLS } from './films_actions.js';
 import { popup } from './modal_window.js';

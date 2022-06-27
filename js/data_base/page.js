@@ -1,6 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable import/extensions */
 import { users } from './users.js';
 
 // Object that stores data about the page

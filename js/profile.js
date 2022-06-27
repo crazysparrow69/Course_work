@@ -1,7 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable no-undef */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable import/extensions */
 import { createFilmDiv } from './fill_content.js';
 import { series } from './data_base/series_base.js';
 import { films } from './data_base/films_base.js';

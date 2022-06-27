@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 // Fix header to the top of the window when scroling down > 200 px
 const fixHeader = () => {
   const header = document.querySelector('.header');

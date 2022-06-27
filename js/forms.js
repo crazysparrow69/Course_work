@@ -1,13 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-plusplus */
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-return-assign */
-/* eslint-disable no-undef */
-/* eslint-disable import/extensions */
 // Import
 import { users, newUser } from './data_base/users.js';
 import { popup } from './modal_window.js';
@@ -82,11 +72,6 @@ const createProfileName = name => {
 
   p.innerHTML = `Выйти из аккаунта: ${name}`;
   div.appendChild(p);
-};
-
-const deleteProfileName = () => {
-  const p = document.getElementById('button-sign-out');
-  div.removeChild(p);
 };
 
 const checkForLoggedIn = () => {
